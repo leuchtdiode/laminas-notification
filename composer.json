@@ -1,0 +1,31 @@
+{
+	"name": "leuchtdiode/laminas-notification",
+	"description": "Laminas module for notifications",
+	"type": "library",
+	"license": "MIT",
+	"homepage": "https://try2catch.com",
+	"authors": [
+		{
+			"name": "Alex Schloegl",
+			"email": "alex@try2catch.com",
+			"homepage": "https://try2catch.com",
+			"role": "Developer"
+		}
+	],
+	"keywords": [
+		"Laminas",
+		"Module",
+		"Notification"
+	],
+	"require": {
+		"php": ">=7.1",
+		"ext-curl": "*",
+		"ext-json": "*",
+		"leuchtdiode/laminas-common": "^1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Notification\\": "src/"
+		}
+	}
+}
