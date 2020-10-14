@@ -23,6 +23,9 @@
 		"ext-json": "*",
 		"leuchtdiode/laminas-common": "^1.0"
 	},
+	"suggest": {
+		"laminas/laminas-mail": "Required for built-in SMTP handler"
+	},
 	"autoload": {
 		"psr-4": {
 			"Notification\\": "src/"
