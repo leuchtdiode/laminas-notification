@@ -8,10 +8,7 @@ use Laminas\Mail\Transport\SmtpOptions;
 
 class Smtp implements Handler
 {
-	/**
-	 * @param HandleData $data
-	 */
-	public function handle(HandleData $data)
+	public function handle(HandleData $data): void
 	{
 		$options = $data->getOptions();
 		$content = $data->getData();

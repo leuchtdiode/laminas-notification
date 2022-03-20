@@ -3,36 +3,23 @@ namespace Notification\Channel\Handler;
 
 class HandleData
 {
-	/**
-	 * @var array
-	 */
-	private $options;
+	private array $options;
 
 	/**
 	 * @var string[]
 	 */
-	private $data;
+	private array $data;
 
-	/**
-	 * @return self
-	 */
-	public static function create()
+	public static function create(): self
 	{
 		return new self();
 	}
 
-	/**
-	 * @return array
-	 */
 	public function getOptions(): array
 	{
 		return $this->options;
 	}
 
-	/**
-	 * @param array $options
-	 * @return HandleData
-	 */
 	public function setOptions(array $options): HandleData
 	{
 		$this->options = $options;
@@ -49,7 +36,6 @@ class HandleData
 
 	/**
 	 * @param string[] $data
-	 * @return HandleData
 	 */
 	public function setData(array $data): HandleData
 	{

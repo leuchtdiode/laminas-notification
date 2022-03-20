@@ -2,24 +2,16 @@
 namespace Notification\Notify;
 
 use Notification\Channel\Handler\HandleData;
+use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class Notifier
 {
-	/**
-	 * @var array
-	 */
-	private $config;
+	private array $config;
 
-	/**
-	 * @var ContainerInterface
-	 */
-	private $container;
+	private ContainerInterface $container;
 
-	/**
-	 * @param array $config
-	 * @param ContainerInterface $container
-	 */
 	public function __construct(array $config, ContainerInterface $container)
 	{
 		$this->config    = $config;
@@ -27,9 +19,10 @@ class Notifier
 	}
 
 	/**
-	 * @param NotificationData $data
+	 * @throws ContainerExceptionInterface
+	 * @throws NotFoundExceptionInterface
 	 */
-	public function notify(NotificationData $data)
+	public function notify(NotificationData $data): void
 	{
 		$channels = $this->config['notification']['channels'] ?? [];
 

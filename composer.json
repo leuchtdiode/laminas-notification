@@ -18,10 +18,10 @@
 		"Notification"
 	],
 	"require": {
-		"php": ">=7.1",
+		"php": "^8.0",
 		"ext-curl": "*",
 		"ext-json": "*",
-		"leuchtdiode/laminas-common": "^1.0"
+		"leuchtdiode/laminas-common": "^2.1"
 	},
 	"suggest": {
 		"laminas/laminas-mail": "Required for built-in SMTP handler"

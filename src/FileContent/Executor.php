@@ -6,23 +6,14 @@ use Notification\Notify\Notifier;
 
 class Executor
 {
-	/**
-	 * @var Notifier
-	 */
-	private $notifier;
+	private Notifier $notifier;
 
-	/**
-	 * @param Notifier $notifier
-	 */
 	public function __construct(Notifier $notifier)
 	{
 		$this->notifier = $notifier;
 	}
 
-	/**
-	 * @param ExecuteData $data
-	 */
-	public function execute(ExecuteData $data)
+	public function execute(ExecuteData $data): void
 	{
 		foreach ($data->getFiles() as $fileData)
 		{

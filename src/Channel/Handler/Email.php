@@ -3,10 +3,7 @@ namespace Notification\Channel\Handler;
 
 class Email implements Handler
 {
-	/**
-	 * @param HandleData $data
-	 */
-	public function handle(HandleData $data)
+	public function handle(HandleData $data): void
 	{
 		$options = $data->getOptions();
 		$content = $data->getData();

@@ -3,31 +3,18 @@ namespace Notification\FileContent;
 
 class ExecuteData
 {
-	/**
-	 * @var array
-	 */
-	private $files = [];
+	private array $files = [];
 
-	/**
-	 * @return self
-	 */
-	public static function create()
+	public static function create(): self
 	{
 		return new self();
 	}
 
-	/**
-	 * @return array
-	 */
 	public function getFiles(): array
 	{
 		return $this->files;
 	}
 
-	/**
-	 * @param array $files
-	 * @return ExecuteData
-	 */
 	public function setFiles(array $files): ExecuteData
 	{
 		$this->files = $files;

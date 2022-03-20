@@ -6,17 +6,11 @@ class NotificationData
 	/**
 	 * @var string[]
 	 */
-	private $channels = [];
+	private array $channels = [];
 
-	/**
-	 * @var array
-	 */
-	private $data;
+	private array $data;
 
-	/**
-	 * @return self
-	 */
-	public static function create()
+	public static function create(): self
 	{
 		return new self();
 	}
@@ -31,7 +25,6 @@ class NotificationData
 
 	/**
 	 * @param string[] $channels
-	 * @return NotificationData
 	 */
 	public function setChannels(array $channels): NotificationData
 	{
@@ -39,18 +32,11 @@ class NotificationData
 		return $this;
 	}
 
-	/**
-	 * @return array
-	 */
 	public function getData(): array
 	{
 		return $this->data;
 	}
 
-	/**
-	 * @param array $data
-	 * @return NotificationData
-	 */
 	public function setData(array $data): NotificationData
 	{
 		$this->data = $data;

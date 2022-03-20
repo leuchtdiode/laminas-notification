@@ -1,17 +1,11 @@
 <?php
 namespace Notification\Channel\Handler;
 
-use Exception;
-
 class Mattermost implements Handler
 {
 	const MAXIMUM_TEXT_LENGTH = 4000;
 
-	/**
-	 * @param HandleData $data
-	 * @throws Exception
-	 */
-	public function handle(HandleData $data)
+	public function handle(HandleData $data): void
 	{
 		$options = $data->getOptions();
 		$content = $data->getData();
@@ -48,12 +42,7 @@ class Mattermost implements Handler
 		}
 	}
 
-	/**
-	 * @param $text
-	 *
-	 * @return string
-	 */
-	private function sanitizeText($text)
+	private function sanitizeText(string $text): string
 	{
 		return strlen($text) > self::MAXIMUM_TEXT_LENGTH
 			? substr($text, 0, self::MAXIMUM_TEXT_LENGTH - 3) . '...'
