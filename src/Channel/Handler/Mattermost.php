@@ -16,7 +16,8 @@ class Mattermost implements Handler
 
 			$body = json_encode(
 				[
-					'text' => $this->sanitizeText($item)
+					'username' => $options['username'] ?? null,
+					'text'     => $this->sanitizeText($item),
 				]
 			);
 
@@ -28,11 +29,12 @@ class Mattermost implements Handler
 				CURLOPT_HTTPHEADER,
 				[
 					'Content-Type: application/json',
-					'Content-Length: ' . strlen($body)
+					'Content-Length: ' . strlen($body),
 				]
 			);
 			curl_setopt(
-				$ch, CURLOPT_POSTFIELDS,
+				$ch,
+				CURLOPT_POSTFIELDS,
 				$body
 			);
 
