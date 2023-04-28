@@ -3,6 +3,7 @@ namespace Notification\FileContent;
 
 use Notification\Notify\NotificationData;
 use Notification\Notify\Notifier;
+use Throwable;
 
 class Executor
 {
@@ -13,6 +14,9 @@ class Executor
 		$this->notifier = $notifier;
 	}
 
+	/**
+	 * @throws Throwable
+	 */
 	public function execute(ExecuteData $data): void
 	{
 		foreach ($data->getFiles() as $fileData)
@@ -32,11 +36,11 @@ class Executor
 					)
 			);
 
-			$pathinfo = pathinfo($file);
+			$pathInfo = pathinfo($file);
 
 			rename(
 				$file,
-				$pathinfo['dirname'] . DIRECTORY_SEPARATOR . date('Ymdhis') . '-' . $pathinfo['basename']
+				$pathInfo['dirname'] . DIRECTORY_SEPARATOR . date('Ymdhis') . '-' . $pathInfo['basename']
 			);
 		}
 	}
