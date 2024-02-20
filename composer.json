@@ -18,7 +18,7 @@
 		"Notification"
 	],
 	"require": {
-		"php": "~8.1.0 || ~8.2.0 || ~8.3.0 ",
+		"php": "~8.1.0 || ~8.2.0 || ~8.3.0",
 		"ext-curl": "*",
 		"ext-json": "*",
 		"leuchtdiode/laminas-common": "^2.7.0"
