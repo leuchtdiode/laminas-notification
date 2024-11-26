@@ -24,6 +24,7 @@ class MicrosoftPowerAutomate implements Handler
 			]);
 
 			curl_setopt($ch, CURLOPT_URL, $options['hook']);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt(
@@ -38,6 +39,11 @@ class MicrosoftPowerAutomate implements Handler
 				CURLOPT_POSTFIELDS,
 				$body
 			);
+
+			if (($proxy = $options['proxy'] ?? null))
+			{
+				curl_setopt($ch, CURLOPT_PROXY, $proxy);
+			}
 
 			curl_exec($ch);
 
